@@ -186,13 +186,15 @@
                     <div class="row">
                         <!-- <div class="col-md-6 col-sm-6"> -->
                             <!-- <div class="form-input-group"> -->
-                                <!-- <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0" -->
-                                                                  <!-- max="4" -->
-                                                                  <!-- placeholder="Husband/Wife or kids" -->
-                                                                  <!-- required> -->
+                                <!-- <i class="fa fa-users"></i><input type="text" name="extras" list="accept"> -->
+                                    <!-- <datalist id="accept"> -->
+                                        <!-- <option value="Deny"> -->
+                                        <!-- <option value="Accept"> -->
+                                    <!-- </datalist> -->
                             <!-- </div> -->
                         <!-- </div> -->
                         <div class="col-md-6 col-sm-6">
+                          <input id="status" type="hidden" name="response" value="Accept">
                             <div class="form-input-group">
                                 <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
                                                                 class="" min="0"
@@ -204,10 +206,25 @@
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
-                    <button class="btn-fill rsvp-btn">
-                        Yes,
-                        that's me!
-                    </button>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                              <button id="status_accept" class="btn-fill rsvp-btn">
+                                  Yes,
+                                  I'll be there!
+                              </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                              <button id="status_decline" class="btn-fill rsvp-btn">
+                                  Nah,
+                                  can't make it!
+                              </button>
+                            </div>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         </div>
@@ -219,7 +236,7 @@
         <div class="row">
             <div class="col-sm-12 text-center content">
                 <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
-                <p>Crafted by Ram - Modified by 3amak</p>
+                <p>Crafted by Ram - Updated by 3amak</p>
             </div>
         </div>
     </div>
@@ -233,7 +250,7 @@
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
-<script src="js/scripts.min.js"></script>
+<script src="js/scripts.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2XwgNNOvgfprRBDV0QlsIZeR_a9KWGao&callback=initMap"></script>
 <!-- Google Analytics -->

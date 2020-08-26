@@ -206,12 +206,21 @@ $(document).ready(function () {
 
     $('#add-to-cal').html(myCalendar);
 
+    /********************** Update RSVP Status **********************/
+    $('#status_decline').click(function(){
+        $('#status').val('Decline');
+    });
+    $('#status_accept').click(function(){
+        $('#status').val('Accept');
+    });
+
 
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
+        e.preventDefault();        
+        //console.log($(this));
         var data = $(this).serialize();
-
+        console.log(data);
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
 //        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
