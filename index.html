@@ -164,17 +164,24 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>What are you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before 15th of September '17</p>
+                <p>We would greatly appreciate if you could RSVP before 15th of September '20</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""
-                                                                     placeholder="Your email"
-                                                                     required>
-                            </div>
+                            <!-- <div class="form-input-group"> -->
+                                <!-- <i class="fa fa-envelope"></i><input type="email" name="email" class="" -->
+                                                                     <!-- placeholder="Your email" -->
+                                                                     <!-- required> -->
+                            <!-- </div> -->
+                        <input id="status" type="hidden" name="response" value="Accept">
+                        <div class="form-input-group">
+                          <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
+                                                          class="" min="0"
+                                                          placeholder="Invite code"
+                                                          required>
+                              </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
@@ -184,7 +191,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row"> -->
                         <!-- <div class="col-md-6 col-sm-6"> -->
                             <!-- <div class="form-input-group"> -->
                                 <!-- <i class="fa fa-users"></i><input type="text" name="extras" list="accept"> -->
@@ -194,16 +201,16 @@
                                     <!-- </datalist> -->
                             <!-- </div> -->
                         <!-- </div> -->
-                        <div class="col-md-6 col-sm-6">
-                          <input id="status" type="hidden" name="response" value="Accept">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- <div class="col-md-6 col-sm-6"> -->
+                          <!-- <input id="status" type="hidden" name="response" value="Accept"> -->
+                            <!-- <div class="form-input-group"> -->
+                                <!-- <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code" -->
+                                                                <!-- class="" min="0" -->
+                                                                <!-- placeholder="Invite code" -->
+                                                                <!-- required> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
