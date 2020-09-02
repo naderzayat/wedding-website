@@ -205,22 +205,24 @@ $(document).ready(function () {
     });
 
     $('#add-to-cal').html(myCalendar);
-
+var invite_response
     /********************** Update RSVP Status **********************/
     $('#status_decline').click(function(){
-        $('#status').val('Decline');
+        $('#status').val('Decline')
+        invite_response = "decline";
     });
     $('#status_accept').click(function(){
         $('#status').val('Accept');
+        invite_response = "accept";
     });
 
 
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();        
+        e.preventDefault();
         //console.log($(this));
         var data = $(this).serialize();
-        console.log(data);
+//        console.log(data);
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
 //        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
@@ -229,10 +231,16 @@ $(document).ready(function () {
 //        } else {
           $.post('https://script.google.com/macros/s/AKfycbwuJR7o1_X9zxcqcbjXAi1VCWyxQ5lTjMQom6MGbwWqCmisY7U/exec', data)
               .done(function (data) {
-                  console.log(data);
+//                  console.log(data);
+//                  console.log(invite_response);
                   if (data.result === "error") {
                       $('#alert-wrapper').html(alert_markup('danger', data.message));
-                  } else {
+                  }
+                  if (invite_response == "decline") {
+                    $('#alert-wrapper').html('');
+                    $('#rsvp-modal-decline').modal('show');
+                  }
+                  else {
                       $('#alert-wrapper').html('');
                       $('#rsvp-modal').modal('show');
                   }
