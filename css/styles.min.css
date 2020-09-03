@@ -6,6 +6,12 @@
   font-family: 'ayajadba';
   src: url('../fonts/Arslan-Wessam-B.ttf') format('truetype');
 }
+@font-face {
+font-family: 'sillyaya';
+font-style: normal;
+font-weight: normal;
+src: url('../fonts/Apple_Chancery.woff') format('woff');
+}
 p {
     font-size: 15px;
     line-height: 29px;
@@ -712,3 +718,4 @@ body.modal-open {
     padding: 25px}
 .droid-arabic-naskh{font-family: 'Droid Arabic Naskh', serif;}
 .ayajadba{font-family: 'ayajadba', serif;}
+.sillyaya{font-family: 'sillyaya', serif;}
