@@ -236,14 +236,18 @@ var invite_response
                   if (data.result === "error") {
                       $('#alert-wrapper').html(alert_markup('danger', data.message));
                   }
-                  if (invite_response == "decline") {
+                  if (invite_response == "decline" && data.result === "success" ) {
                     $('#alert-wrapper').html('');
                     $('#rsvp-modal-decline').modal('show');
                   }
-                  else {
-                      $('#alert-wrapper').html('');
-                      $('#rsvp-modal').modal('show');
+                  if (invite_response == "accept" && data.result === "success" ) {
+                    $('#alert-wrapper').html('');
+                    $('#rsvp-modal').modal('show');
                   }
+//                  else {
+//                      $('#alert-wrapper').html('');
+//                      $('#rsvp-modal').modal('show');
+//                  }
               })
               .fail(function (data) {
                   console.log(data);
