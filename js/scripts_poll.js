@@ -242,7 +242,7 @@ var get_results_dance
 //            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc'){
 //            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
 //        } else {
-          $.post('https://script.google.com/macros/s/AKfycby5uCcClWLHI1kzKBGYpE0QjZlTh7fRk3w68sMZ_kq3j4W-PHkqLuVpaLHRdZ2gRb1u/exec', data)
+          $.post('https://script.google.com/macros/s/AKfycbyY5MOh7coMsDiQgZQEYodNWXam6SF3ZZT494C8xai6GlHynBXl8GbgRiQ5sX5Su2IF/exec', data)
               .done(function (data) {
                   console.log(data);
                   console.log(dancer_response);
@@ -272,7 +272,7 @@ var get_results_dance
         var data = $(this).serialize();
         console.log(data);
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-          $.post('https://script.google.com/macros/s/AKfycbzLipTGEaZHQ3FqNusVzMT4Knr17llov3OKUIORxHgLp_Trq3ExUmZFA-C3snOVfRTh/exec', data)
+          $.post('https://script.google.com/macros/s/AKfycbyY5MOh7coMsDiQgZQEYodNWXam6SF3ZZT494C8xai6GlHynBXl8GbgRiQ5sX5Su2IF/exec', data)
               .done(function (data) {
                   console.log(data);
                   console.log(dress_response);
@@ -297,7 +297,7 @@ var get_results_dance
         var data = $(this).serialize();
         console.log(data);
         $('#alert-wrapper-results').html(alert_markup('info', '<strong>Just a sec!</strong> We are retrieving your results.'));
-          $.get('https://script.google.com/macros/s/AKfycbzLipTGEaZHQ3FqNusVzMT4Knr17llov3OKUIORxHgLp_Trq3ExUmZFA-C3snOVfRTh/exec', data)
+          $.get('https://script.google.com/macros/s/AKfycbyY5MOh7coMsDiQgZQEYodNWXam6SF3ZZT494C8xai6GlHynBXl8GbgRiQ5sX5Su2IF/exec', data)
               .done(function (data) {
                   console.log(data);
                   console.log(get_results_dancer);
@@ -322,7 +322,7 @@ var get_results_dance
         var data = $(this).serialize();
         console.log(data);
         $('#alert-wrapper-results').html(alert_markup('info', '<strong>Just a sec!</strong> We are retrieving your results.'));
-          $.get('https://script.google.com/macros/s/AKfycbzLipTGEaZHQ3FqNusVzMT4Knr17llov3OKUIORxHgLp_Trq3ExUmZFA-C3snOVfRTh/exec', data)
+          $.get('https://script.google.com/macros/s/AKfycbyY5MOh7coMsDiQgZQEYodNWXam6SF3ZZT494C8xai6GlHynBXl8GbgRiQ5sX5Su2IF/exec', data)
               .done(function (data) {
                   console.log(data);
                   console.log(get_results_dress);
