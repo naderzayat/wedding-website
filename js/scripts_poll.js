@@ -207,6 +207,8 @@ $(document).ready(function () {
     $('#add-to-cal').html(myCalendar);
 var dancer_response
 var dress_response
+var get_results_dress
+var get_results_dance
     /********************** Update Vote Status **********************/
     $('#status_decline').click(function(){
         $('#status').val('Decline')
@@ -220,14 +222,21 @@ var dress_response
         $('#dress_status').val('Voted_Best_Dress');
         dress_response = "voted";
     });
-
-    /********************** Best_Dress **********************/
+    $('#get_final_results_dress').click(function(){
+        $('#get_result_dress').val('Get_Results_Dress');
+        get_results_dress = "voted";
+    });
+    $('#get_final_results_dancer').click(function(){
+        $('#get_result_dancer').val('Get_Results_Dancer');
+        get_results_dancer = "voted";
+    });
+    /********************** Best_Dancer **********************/
     $('#dancer_form').on('submit', function (e) {
         e.preventDefault();
         //console.log($(this));
         var data = $(this).serialize();
         console.log(data);
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        $('#alert-wrapper-dancer').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
 //        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
 //            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc'){
@@ -238,10 +247,10 @@ var dress_response
                   console.log(data);
                   console.log(dancer_response);
                   if (data.result == "error") {
-                      $('#alert-wrapper').html(alert_markup('danger', data.message));
+                      $('#alert-wrapper-dancer').html(alert_markup('danger', data.message));
                   }
                   if (dancer_response == "voted" && data.result == "success" ) {
-                    $('#alert-wrapper').html('');
+                    $('#alert-wrapper-dancer').html('');
                     $('#rsvp-modal').modal('show');
                   }
 //                  else {
@@ -263,12 +272,7 @@ var dress_response
         var data = $(this).serialize();
         console.log(data);
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-
-//        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-//            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc'){
-//            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-//        } else {
-          $.post('https://script.google.com/macros/s/AKfycbwVC6Z5bqjkLZN8kSHEqT5gSODf5aNrzZl39qIGZNl-i4aUCi-7l9Ryxy6vpahfaQsY/exec', data)
+          $.post('https://script.google.com/macros/s/AKfycbzLipTGEaZHQ3FqNusVzMT4Knr17llov3OKUIORxHgLp_Trq3ExUmZFA-C3snOVfRTh/exec', data)
               .done(function (data) {
                   console.log(data);
                   console.log(dress_response);
@@ -279,10 +283,6 @@ var dress_response
                     $('#alert-wrapper').html('');
                     $('#rsvp-modal').modal('show');
                   }
-//                  else {
-//                      $('#alert-wrapper').html('');
-//                      $('#rsvp-modal').modal('show');
-//                  }
               })
               .fail(function (data) {
                   console.log(data);
@@ -290,8 +290,57 @@ var dress_response
               });
 //        }
     });
+    /********************** Get_Results_Dancer **********************/
+    $('#dancer_results_form').on('submit', function (e) {
+        e.preventDefault();
+        //console.log($(this));
+        var data = $(this).serialize();
+        console.log(data);
+        $('#alert-wrapper-results').html(alert_markup('info', '<strong>Just a sec!</strong> We are retrieving your results.'));
+          $.get('https://script.google.com/macros/s/AKfycbzLipTGEaZHQ3FqNusVzMT4Knr17llov3OKUIORxHgLp_Trq3ExUmZFA-C3snOVfRTh/exec', data)
+              .done(function (data) {
+                  console.log(data);
+                  console.log(get_results_dancer);
+                  if (data.result == "error") {
+                      $('#alert-wrapper-results').html(alert_markup('danger', data.message));
+                  }
+                  document.getElementById("data_dancer").innerHTML = data.dancer;
+                  if (get_results_dancer == "voted") {
+                    $('#alert-wrapper-results').html('');
+                    $('#dancer-result-modal').modal('show');
+                  }
+              })
+              .fail(function (data) {
+                  console.log(data);
+                  $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+              });
+    });
+    /********************** Get_Results_Dress **********************/
+    $('#dress_results_form').on('submit', function (e) {
+        e.preventDefault();
+        //console.log($(this));
+        var data = $(this).serialize();
+        console.log(data);
+        $('#alert-wrapper-results').html(alert_markup('info', '<strong>Just a sec!</strong> We are retrieving your results.'));
+          $.get('https://script.google.com/macros/s/AKfycbzLipTGEaZHQ3FqNusVzMT4Knr17llov3OKUIORxHgLp_Trq3ExUmZFA-C3snOVfRTh/exec', data)
+              .done(function (data) {
+                  console.log(data);
+                  console.log(get_results_dress);
+                  if (data.result == "error") {
+                      $('#alert-wrapper-results').html(alert_markup('danger', data.message));
+                  }
+                  document.getElementById("data_dress").innerHTML = data.dress;
+                  if (get_results_dress == "voted") {
+                    $('#alert-wrapper-results').html('');
+                    $('#dress-result-modal').modal('show');
+                  }
+              })
+              .fail(function (data) {
+                console.log(data);
+                $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+              });
+    });
 });
-
 /********************** Extras **********************/
 
 // Google map

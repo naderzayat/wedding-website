@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Nader & Aya getting hitched!</title>
+    <title>Aya's '20s Party!</title>
     <meta name="description" content="We would like to invite you to our big day.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
@@ -120,7 +120,6 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="hero-content text-center">
                     <!--<h1>Nader and Aya</h1>-->
-                    <img style="text-align: center;position:absolute; top:600px" src="img/logo-lg.png">
                     <!--<p class="intro">Nader & Aya getting hitched!</p>-->
                     <p></p>
                     <!-- <a style="vertical-align: middle;position: relative;top: 150px"href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
@@ -137,18 +136,18 @@
     <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
 </section>
 
-<section id="invitation" class="section-padding">
+<section id="invitation" class="section-padding" style="background-image: url('img/background1.jpeg');">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h4 style="font-size: 30px" class="sillyaya">Welcome to Aya's Party Competition!!</h4>
+                <h4 style="font-size: 30px; color:white;" class="sillyaya">Welcome to Aya's Party Competition!!</h4>
                 <!-- <div class="share-bar"></div> -->
             </div>
         </div>
     </div>
 </section>
 
-<section class="rsvp text-center" id="rsvp">
+<section class="rsvp text-center" id="rsvp"  style="background-image: url('img/background1.jpeg');">
 
     <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -158,6 +157,21 @@
                     </button>
                     <div class="section-padding">
                         <h3>Thank you!</h3>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="result-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3>RESULTS!</h3>
+                        <h1>The Best Dancer # is :  <span id="data_dancer"></span></h1>
+                        <h1>The Best Outfit # is :  <span id="data_dress"></span></h1>
                     </div>
                 </div>
             </div><!-- /.modal-content -->
@@ -181,7 +195,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h3>Please Vote for the Best Dancer</h3>
+                <h3 style="font-size: 20px; color:white;">Please Vote for the Best Dancer</h3>
                 <form id="dancer_form" class="rsvp-form"
                       action=""
                       method="POST">
@@ -204,7 +218,7 @@
                         </div>
                   </div>
                     <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
+                        <div class="col-md-12" id="alert-wrapper-dancer"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
@@ -218,7 +232,7 @@
                 </form>
             </div>
             <div class="col-md-6 col-md-offset-3">
-                <h3>Please Vote for the Best Outfit</h3>
+                <h3 style="font-size: 20px; color:white;">Please Vote for the Best Outfit</h3>
                 <form id="dress_form" class="rsvp-form"
                       action=""
                       method="POST">
@@ -257,18 +271,16 @@
             </div>
         </div>
     </div>
-</section>
-
-<footer>
-    <div class="container">
+    <div class="container" style="background-image: url('img/background1.jpeg');">
         <div class="row">
             <div class="col-sm-12 text-center content">
                 <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
-                <p>Crafted by Ram - Updated by 3amak</p>
+                <p style="font-size: 15px; color:white;">Crafted by Ram - Updated by 3amak</p>
             </div>
         </div>
     </div>
-</footer>
+</section>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
