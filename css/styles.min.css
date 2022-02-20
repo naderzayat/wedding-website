@@ -261,7 +261,7 @@ to {
     transition: all 300ms ease-in-out}
 .hero {
     min-height: 750px;
-    background: url("../img/ummayed.JPG") center center;
+    background: url("../img/ummayed.jpg") center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
