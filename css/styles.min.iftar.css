@@ -7,6 +7,14 @@
   src: url('../fonts/Arslan-Wessam-B.ttf') format('truetype');
 }
 @font-face {
+  font-family: 'albattar';
+  src: url('../fonts/AlBattar Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'farsi';
+  src: url('../fonts/KacstFarsi KacstFarsi.ttf') format('truetype');
+}
+@font-face {
 font-family: 'sillyaya';
 font-style: normal;
 font-weight: normal;
@@ -51,6 +59,7 @@ h5 {
     background-color: #e8ca6f}
 .btn-white {
     font-size: 13px;
+    font-family: cursive;
     border: solid 2px;
     -moz-border-radius: 40px;
     -webkit-border-radius: 40px;
