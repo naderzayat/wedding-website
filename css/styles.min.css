@@ -722,12 +722,12 @@ body.modal-open {
 
 #myVideo {
   position: absolute;
-  /* display: block; */
+  display: block;
   /* object-fit: cover */
   right: 0;
   bottom: 0;
-  /* min-width: 100%; */
-  /* min-height: 100%; */
+  min-width: 100%;
+  min-height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
